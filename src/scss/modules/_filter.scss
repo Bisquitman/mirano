@@ -1,0 +1,40 @@
+@use "../variables" as *;
+
+.filter {
+  &__fieldset {
+    font-family: inherit;
+    padding: 0;
+    border: none;
+  }
+
+  &__radio {
+    position: absolute;
+    appearance: none;
+
+    &:focus + .filter__label {
+      background-color: $orange;
+      border-color: $light-orange;
+    }
+
+    &:checked + .filter__label {
+      background-color: $light-orange;
+      color: $white;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    padding: 16px;
+    border: 1px solid transparent;
+    background-color: $white;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    border-radius: 300px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+}

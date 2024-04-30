@@ -1,0 +1,79 @@
+@use "../variables" as *;
+
+.footer {
+  padding: 80px 0;
+  background-color: $footer;
+  background-image: url('/img/footer-bg.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+
+  // .footer__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  // .footer__logo
+  &__logo {
+    width: 200px;
+  }
+
+  // .footer__contacts
+  &__contacts {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // .footer__email
+  &__email {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  // .footer__link
+  &__link {
+    color: $orange;
+
+    &:hover {
+      color: $light-orange;
+    }
+  }
+
+  // .footer__list
+  &__list {
+
+    // .footer__list_contacts
+    &_contacts {
+      display: flex;
+      gap: 12px;
+      color: $orange;
+    }
+
+    // .footer__list_info
+    &_info {
+    }
+  }
+
+  // .footer__item
+  &__item {
+  }
+
+  // .footer__info
+  &__info {
+  }
+
+  // .footer__text
+  &__text {
+  }
+
+  // .footer__copyright
+  &__copyright {
+    text-transform: uppercase;
+  }
+}

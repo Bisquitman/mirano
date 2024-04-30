@@ -1,0 +1,73 @@
+@use "../variables" as *;
+
+.subscribe {
+  padding: 140px 0;
+
+  // .subscribe__container
+  &__container {
+  }
+
+  // .subscribe__title
+  &__title {
+    margin-bottom: calc(40 / 50 * 1em);
+  }
+
+  // .subscribe__form
+  &__form {
+    position: relative;
+    max-width: 524px;
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  // .subscribe__input
+  &__input {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    border-radius: 32px;
+    border: none;
+    background-color: $white;
+    padding: 8px 45px 8px 16px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+
+    &::placeholder {
+      color: rgba($dark, 0.3);
+    }
+
+    &:hover {
+      background-color: $footer;
+    }
+
+    &:focus, &:focus-visible {
+      outline: 1px solid $light-orange;
+    }
+
+    &::-webkit-search-cancel-button {
+      margin-left: 6px;
+    }
+
+  }
+
+  // .subscribe__btn
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: $light-orange;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

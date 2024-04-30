@@ -1,0 +1,70 @@
+@use '../variables' as *;
+
+.hero {
+  padding: 60px 0;
+
+  // .hero__container
+  &__container {
+  }
+
+  // .hero__hgroup
+  &__hgroup {
+    margin-bottom: 24px;
+  }
+
+  // .hero__title
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    // calc($min-size+px + (($max-size - $min-size) * ((100vw - $next-breakpoint+px) / ($prev-breakpoint - $next-breakpoint))));
+    font-size: clamp(80px, calc(80px + ((120 - 80) * ((100vw - 1024px) / (1440 - 1024)))), 120px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: $green;
+  }
+
+  // .hero__subtitle
+  &__subtitle {
+    font-family: $second-family;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(32px, calc(32px + ((40 - 32) * ((100vw - 1024px) / (1440 - 1024)))), 40px);
+    line-height: 1.3;
+    text-align: right;
+  }
+
+  // .hero__group-images
+  &__group-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+  }
+
+  // .hero__image
+  &__image {
+    object-fit: contain;
+
+    // .hero__image_left
+    &_left {
+      width: calc(284 / $container-width * 100%);
+      border-radius: 400px 400px 400px 0;
+    }
+
+    // .hero__image_center
+    &_center {
+      mask-image: url('/img/masks.svg#mask0_10_18');
+      --webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      width: calc(680 / $container-width * 100%);
+      aspect-ratio: 680 / 588;
+    }
+
+    // .hero__image_right
+    &_right {
+      width: calc(284 / $container-width * 100%);
+      border-radius: 400px 0 400px 400px;
+    }
+  }
+}
