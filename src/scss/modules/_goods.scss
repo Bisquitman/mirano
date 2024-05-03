@@ -1,0 +1,36 @@
+@use '../variables' as *;
+@use '../media' as *;
+
+.goods {
+  @include adaptiveValue("padding-top", 60, 40, 1024, 768);
+
+  // .goods__container
+  &__container {
+  }
+  // .goods__title
+  &__title {
+    @include adaptiveValue("margin-bottom", 40, 24, 1024, 768);
+  }
+  // .goods__list
+  &__list {
+    --width: 310px;
+    --col-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--width));
+    justify-content: center;
+    gap: 24px var(--col-gap);
+    max-width: 970px;
+    margin: 0 auto;
+
+    @include mobile {
+      --width: 140px;
+      --col-gap: 12px;
+    }
+  }
+  // .goods__item
+  &__item {
+  }
+  // .goods__card
+  &__card {
+  }
+}

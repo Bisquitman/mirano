@@ -1,0 +1,129 @@
+@use "../variables" as *;
+@use "../media" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 32px;
+  padding: 0;
+  background-color: $white;
+  overflow: hidden;
+  height: 100%;
+
+  @include mobile {
+    border-radius: 20px;
+  }
+
+  // .card__img
+  &__img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    // height: 360px;
+    flex-basis: 360px;
+
+    @include mobile {
+      flex-basis: 180px;
+    }
+  }
+  // .card__content
+  &__content {
+    flex-grow: 1;
+    padding: 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include mobile {
+      padding: 16px 12px;
+      gap: 12px;
+    }
+  }
+  // .card__title
+  &__title {
+    flex-grow: 1;
+    font-weight: 400;
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  // .card__footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  // .card__delivery
+  &__delivery {
+    padding-left: 20px;
+    background-image: url("/img/delivery-icon.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    font-size: 14px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  // .card__btn
+  &__btn {
+    flex-grow: 1;
+    border-radius: 32px;
+    padding: 8px 16px;
+    background-color: $light-orange;
+    color: $white;
+
+    border: 1px solid transparent;
+    outline: none;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $orange;
+
+      > .card__btn-price {
+        display: none;
+      }
+
+      > .card__btn-text {
+        display: inline;
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      background-color: $orange;
+      border-color: $light-orange;
+    }
+
+    &:disabled {
+      background-color: $light-orange;
+      opacity: 0.4;
+    }
+
+    @include mobile {
+      // justify-self: stretch;
+      font-size: 14px;
+    }
+  }
+  // .card__btn-price
+  &__btn-price {
+  }
+  // .card__btn-text
+  &__btn-text {
+    display: none;
+  }
+}

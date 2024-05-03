@@ -1,7 +1,9 @@
-@use '../variables' as *;
+@use "../variables" as *;
+@use "../media" as *;
 
 .hero {
-  padding: 60px 0;
+  @include adaptiveValue("padding-top", 60, 40, 1024, 768);
+  @include adaptiveValue("padding-bottom", 60, 40, 1024, 768);
 
   // .hero__container
   &__container {
@@ -17,11 +19,20 @@
     font-family: $second-family;
     font-weight: 400;
     // calc($min-size+px + (($max-size - $min-size) * ((100vw - $next-breakpoint+px) / ($prev-breakpoint - $next-breakpoint))));
-    font-size: clamp(80px, calc(80px + ((120 - 80) * ((100vw - 1024px) / (1440 - 1024)))), 120px);
+    // font-size: clamp(80px, calc(80px + ((120 - 80) * ((100vw - 1024px) / (1440 - 1024)))), 120px);
+    @include adaptiveValue("font-size", 120, 80, 1440, 1024);
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
     color: $green;
+
+    @include laptop {
+      @include adaptiveValue("font-size", 80, 58, 1023.98, 768);
+    }
+
+    @include tablet {
+      @include adaptiveValue("font-size", 58, 40, 767.98, 320);
+    }
   }
 
   // .hero__subtitle
@@ -29,9 +40,18 @@
     font-family: $second-family;
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(32px, calc(32px + ((40 - 32) * ((100vw - 1024px) / (1440 - 1024)))), 40px);
+    // font-size: clamp(32px, calc(32px + ((40 - 32) * ((100vw - 1024px) / (1440 - 1024)))), 40px);
+    @include adaptiveValue("font-size", 40, 32, 1440, 1024);
     line-height: 1.3;
     text-align: right;
+
+    @include laptop {
+      @include adaptiveValue("font-size", 32, 24, 1023.98, 768);
+    }
+
+    @include tablet {
+      @include adaptiveValue("font-size", 24, 18, 1023.98, 768);
+    }
   }
 
   // .hero__group-images
@@ -39,12 +59,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 26px;
+    gap: 2%; /* 26/1300 */
   }
 
   // .hero__image
   &__image {
-    object-fit: contain;
+    object-fit: cover;
+    aspect-ratio: 284/352;
 
     // .hero__image_left
     &_left {
@@ -54,11 +75,8 @@
 
     // .hero__image_center
     &_center {
-      mask-image: url('/img/masks.svg#mask0_10_18');
-      --webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
+      aspect-ratio: 680/588;
       width: calc(680 / $container-width * 100%);
-      aspect-ratio: 680 / 588;
     }
 
     // .hero__image_right

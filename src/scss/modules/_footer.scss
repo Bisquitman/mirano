@@ -1,20 +1,27 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .footer {
-  padding: 80px 0;
   background-color: $footer;
-  background-image: url('/img/footer-bg.svg');
+  background-image: url("/img/footer-bg.svg");
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: contain;
+  // background-size: contain;
+  @include adaptiveValue("background-size", 1900, 710, 1900, $mobile);
+  @include adaptiveValue("padding-top", 80, 60, 1024, 768);
+  @include adaptiveValue("padding-bottom", 80, 60, 1024, 768);
+
+  @media (min-width: 1900px) {
+    background-size: cover;
+  }
 
   // .footer__container
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 60px;
+    @include adaptiveValue("gap", 60, 40, 1024, 768);
   }
 
   // .footer__logo
@@ -38,7 +45,7 @@
 
   // .footer__link
   &__link {
-    color: $orange;
+    transition: color 0.3s;
 
     &:hover {
       color: $light-orange;
@@ -47,16 +54,20 @@
 
   // .footer__list
   &__list {
+    display: flex;
 
-    // .footer__list_contacts
-    &_contacts {
-      display: flex;
+    // .footer__list_social
+    &_social {
+      align-items: center;
+      justify-content: center;
       gap: 12px;
       color: $orange;
     }
 
     // .footer__list_info
     &_info {
+      flex-direction: column;
+      gap: 3px;
     }
   }
 
@@ -64,8 +75,8 @@
   &__item {
   }
 
-  // .footer__info
-  &__info {
+  // .footer__developers
+  &__developers {
   }
 
   // .footer__text

@@ -2,6 +2,8 @@
 
 .subscribe {
   padding: 140px 0;
+  @include adaptiveValue("padding-top", 140, 100, 1024, 768);
+  @include adaptiveValue("padding-bottom", 140, 100, 1024, 768);
 
   // .subscribe__container
   &__container {
@@ -9,7 +11,7 @@
 
   // .subscribe__title
   &__title {
-    margin-bottom: calc(40 / 50 * 1em);
+    @include adaptiveValue("margin-bottom", 40, 24, 1024, 768);
   }
 
   // .subscribe__form
@@ -45,14 +47,14 @@
       background-color: $footer;
     }
 
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
       outline: 1px solid $light-orange;
     }
 
     &::-webkit-search-cancel-button {
       margin-left: 6px;
     }
-
   }
 
   // .subscribe__btn
@@ -62,12 +64,35 @@
     right: 0;
     bottom: 0;
     padding: 10px;
-    background-color: $light-orange;
     -webkit-border-radius: 32px;
     -moz-border-radius: 32px;
     border-radius: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $light-orange;
+    color: $white;
+    border: 1px solid transparent;
+    outline: none;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $orange;
+    }
+
+    &:focus,
+    &:focus-visible {
+      background-color: $orange;
+      border-color: $light-orange;
+    }
+
+    &:disabled {
+      background-color: $light-orange;
+      opacity: 0.4;
+    }
   }
 }

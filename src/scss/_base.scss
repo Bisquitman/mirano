@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "media" as *;
 
 :root {
   position: relative;
@@ -25,10 +26,9 @@ body {
   font-family: $font-family;
   background-color: $bg;
   color: $dark;
-  font-size: 18px;
+  @include adaptiveValue("font-size", 18, 14, 768, 520);
   line-height: 1.3;
 }
-
 
 img,
 svg {
@@ -40,7 +40,6 @@ svg {
 svg {
   max-height: 100%;
 }
-
 
 button {
   padding: 0;
@@ -66,13 +65,13 @@ h3,
 p,
 figure,
 fieldset {
+  font-family: inherit;
   margin: 0;
+  padding: 0;
 }
 
-h1,
-h2,
-h3 {
-  font-family: $second-family;
+fieldset {
+  border: none;
 }
 
 iframe {
@@ -84,32 +83,25 @@ iframe {
   transform: scale(0);
 }
 
-
 [class*="__container"] {
   max-width: calc(var(--container-width) + var(--offset-container) * 2);
   margin: 0 auto;
   padding: 0 var(--offset-container);
 
-  //@include hires {
-  //  --container-width: 1600px;
-  //  --offset-container: 60px;
-  //}
-  //
-  //@include tablet {
-  //  --offset-container: 46px;
-  //}
-  //
-  //@include mobile {
-  //  --offset-container: 14px;
-  //}
+  @include tablet {
+    --container-width: 640px;
+  }
+
+  @include mobile {
+    --offset-container: 14px;
+  }
 }
 
 .section-title {
   font-family: $second-family;
   font-weight: 400;
   font-size: 50px;
-  font-size: clamp(32px, calc(32px + ((50 - 32) * ((100vw - 768px) / (1440 - 768)))), 50px);
-
+  @include adaptiveValue("font-size", 50, 32, 1024, 768);
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;

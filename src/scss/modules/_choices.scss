@@ -1,0 +1,19 @@
+@use "../variables" as *;
+@use "../media" as *;
+
+.choices {
+  // .choices__btn
+  &__btn {
+  }
+  // .choices__box
+  &__box {
+    // position: absolute;
+    // top: calc(100% + 20px);
+    // display: none;
+    // @include adaptiveValue("max-width", 276, 236, 1440, $mobile);
+    border-radius: 12px;
+    background-color: $white;
+    @include adaptiveValue("padding", 24, 16, 1440, $mobile);
+    @include adaptiveValue("font-size", 18, 14, 1440, $mobile);
+  }
+}

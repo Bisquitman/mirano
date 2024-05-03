@@ -1,19 +1,39 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .filter {
-  &__fieldset {
-    font-family: inherit;
-    padding: 0;
-    border: none;
+  // .filter__container
+  &__container {
+  }
+  // .filter__form
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  // .filter__group
+  &__group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 12, 8, 768, 320);
+
+    // .filter__group_choices
+    &_choices {
+      @include adaptiveValue("gap", 64, 40, 768, 320);
+    }
   }
 
   &__radio {
     position: absolute;
     appearance: none;
 
-    &:focus + .filter__label {
+    &:focus-visible + .filter__label {
       background-color: $orange;
-      border-color: $light-orange;
+      outline: 1px solid $light-orange;
+      outline-offset: 3px;
     }
 
     &:checked + .filter__label {
@@ -25,8 +45,12 @@
   &__label {
     display: inline-block;
     padding: 16px;
-    border: 1px solid transparent;
+    padding-left: 60px;
+    // border: 1px solid transparent;
     background-color: $white;
+    background-repeat: no-repeat;
+    background-position: center left 16px;
+    background-size: 40px;
     -webkit-border-radius: 300px;
     -moz-border-radius: 300px;
     border-radius: 300px;
@@ -35,6 +59,98 @@
     &:hover {
       background-color: $orange;
       color: $white;
+    }
+
+    &_flower {
+      background-image: url("/img/flower.png");
+    }
+    &_toys {
+      background-image: url("/img/toys.png");
+    }
+    &_postcard {
+      background-image: url("/img/postcard.png");
+    }
+
+    @include mobile {
+      font-size: 14px;
+      background-size: 24px;
+      background-position: center left 12px;
+      padding: 12px;
+      padding-left: 40px;
+    }
+  }
+  // .filter__choices
+  &__choices {
+    position: relative;
+  }
+  // .filter__select
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    &::after {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' fill='none' viewBox='0 0 8 6'%3E%3Cpath fill='%232E3514' d='M4 6 .536 0h6.928L4 6Z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 8px;
+      height: 8px;
+    }
+
+    &:hover {
+      color: $orange;
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' fill='none' viewBox='0 0 8 6'%3E%3Cpath fill='%23d17d2f' d='M4 6 .536 0h6.928L4 6Z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+  // .filter__price
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  // .filter__choices-box
+  &__choices-box {
+  }
+  // .filter__input-price
+  &__input-price {
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 32px;
+    padding: 8px 16px;
+    background-color: $bg;
+    @include adaptiveValue("max-width", 110, 90, 1440, $mobile);
+
+    &::placeholder {
+      color: rgba($dark, 0.3);
+    }
+
+    &:focus-visible {
+      border-color: $light-orange;
+    }
+  }
+  // .filter__type-list
+  &__type-list {
+  }
+  // .filter__type-item
+  &__type-item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+  // .filter__type-btn
+  &__type-btn {
+    text-align: left;
+    white-space: nowrap;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $orange;
     }
   }
 }
