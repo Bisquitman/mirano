@@ -52,3 +52,5 @@
 - [google webfonts helper](https://gwfh.mranftl.com/fonts)
 - [real favicon generator](https://realfavicongenerator.net/)
 - [base css](https://codepen.io/Quper/pen/GRRZzWy)
+- [Валидатор](https://validator.w3.org/#validate_by_input)
+- [Проверка дерева заголовков и БЭМ](https://yoksel.github.io/html-tree/)

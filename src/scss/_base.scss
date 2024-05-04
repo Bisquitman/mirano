@@ -62,6 +62,7 @@ ul {
 h1,
 h2,
 h3,
+h4,
 p,
 figure,
 fieldset {
@@ -106,4 +107,12 @@ iframe {
   text-transform: uppercase;
   text-align: center;
   color: $green;
+}
+
+.delivery {
+  padding-left: 20px;
+  background-image: url("/img/delivery-icon.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  @include adaptiveValue('font-size', 14, 12, 768, $mobile);
 }

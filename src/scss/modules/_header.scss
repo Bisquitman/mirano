@@ -1,10 +1,29 @@
 @use "../variables" as *;
 @use "../media" as *;
 
+@keyframes slideDown {
+  to {
+    top: 0;
+  }
+}
+
 .header {
-  // padding: 32px 0;
   @include adaptiveValue("padding-top", 32, 24, 768, 320);
   @include adaptiveValue("padding-bottom", 32, 24, 768, 320);
+
+  //.header_fixed
+  &_fixed {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    -webkit-box-shadow: 0 4px 2px -2px $footer;
+    -moz-box-shadow: 0 4px 2px -2px $footer;
+    box-shadow: 0 4px 2px -2px $footer;
+    background-color: $footer;
+    animation: slideDown .3s forwards;
+    z-index: 998;
+  }
 
   // .header__container
   &__container {
@@ -24,8 +43,8 @@
       grid-template-areas:
         "logo logo cart"
         "form form form";
+      gap: 24px;
     }
-    gap: 24px;
   }
 
   // .header__logo

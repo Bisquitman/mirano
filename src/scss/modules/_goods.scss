@@ -6,6 +6,10 @@
 
   // .goods__container
   &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
   }
   // .goods__title
   &__title {
