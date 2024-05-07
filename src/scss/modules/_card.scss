@@ -73,7 +73,7 @@
     padding: 8px 16px;
     background-color: $light-orange;
     color: $white;
-    @include adaptiveValue('font-size', 18, 14, 768, $mobile);
+    @include adaptiveValue('font-size', 18, 14, $tablet, $mobile);
 
     border: 1px solid transparent;
     outline: none;

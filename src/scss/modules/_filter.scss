@@ -18,11 +18,11 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    @include adaptiveValue("gap", 12, 8, 768, 320);
+    @include adaptiveValue("gap", 12, 8, $tablet, $mobile);
 
     // .filter__group_choices
     &_choices {
-      @include adaptiveValue("gap", 64, 40, 768, 320);
+      @include adaptiveValue("gap", 64, 40, $tablet, $mobile);
     }
   }
 
@@ -46,7 +46,6 @@
     display: inline-block;
     padding: 16px;
     padding-left: 60px;
-    // border: 1px solid transparent;
     background-color: $white;
     background-repeat: no-repeat;
     background-position: center left 16px;
@@ -122,6 +121,16 @@
   }
   // .filter__choices-box
   &__choices-box {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    background-color: $white;
+    @include adaptiveValue("padding", 24, 16, 1440, $mobile);
   }
   // .filter__input-price
   &__input-price {
@@ -130,7 +139,7 @@
     border-radius: 32px;
     padding: 8px 16px;
     background-color: $bg;
-    @include adaptiveValue("max-width", 110, 90, 1440, $mobile);
+    @include adaptiveValue("max-width", 110, 90, $tablet, $mobile);
 
     &::placeholder {
       color: rgba($dark, 0.3);
@@ -155,7 +164,11 @@
     white-space: nowrap;
     transition: color 0.2s;
 
-    &:hover {
+    &:hover:not(&_active)  {
+      color: $light-orange;
+    }
+
+    &_active {
       color: $orange;
     }
   }

@@ -26,7 +26,7 @@ body {
   font-family: $font-family;
   background-color: $bg;
   color: $dark;
-  @include adaptiveValue("font-size", 18, 14, 768, 520);
+  @include adaptiveValue("font-size", 18, 14, $tablet, $mobile);
   line-height: 1.3;
 }
 
@@ -85,16 +85,16 @@ iframe {
 }
 
 [class*="__container"] {
-  max-width: calc(var(--container-width) + var(--offset-container) * 2);
+  max-width: calc(var(--container-width) + var(--container-offset) * 2);
   margin: 0 auto;
-  padding: 0 var(--offset-container);
+  padding: 0 var(--container-offset);
 
   @include tablet {
     --container-width: 640px;
   }
 
   @include mobile {
-    --offset-container: 14px;
+    --container-offset: 14px;
   }
 }
 
@@ -102,7 +102,7 @@ iframe {
   font-family: $second-family;
   font-weight: 400;
   font-size: 50px;
-  @include adaptiveValue("font-size", 50, 32, 1024, 768);
+  @include adaptiveValue("font-size", 50, 32, $laptop, $tablet);
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
@@ -114,5 +114,5 @@ iframe {
   background-image: url("/img/delivery-icon.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
-  @include adaptiveValue('font-size', 14, 12, 768, $mobile);
+  @include adaptiveValue('font-size', 14, 12, $tablet, $mobile);
 }

@@ -27,7 +27,7 @@
       <form action="" class="header__form">
         <input class="header__input" type="search" name="search" placeholder="Букет из роз" id="">
 
-        <button class="header__search-btn">
+        <button class="header__search-btn" type="submit">
           <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13.333 4.167c0 .618.611 1.541 1.23 2.316.794 1 1.745 1.873 2.834 2.539.816.499 1.806.978 2.603.978m0 0c-.797 0-1.788.48-2.603.978-1.09.667-2.04 1.54-2.834 2.538-.619.776-1.23 1.7-1.23 2.317M20 10H0"
@@ -38,7 +38,7 @@
 
       <img class="header__logo" src="img/logo.svg" alt="Логотип сайта Mirano Flower Boutique" width="200" height="65">
 
-      <button class="header__cart-btn" type="submit">0</button>
+      <button class="header__cart-btn" type="button">0</button>
     </div>
   </header>
 
@@ -227,7 +227,7 @@
 
                 <div class="cart__counter">
                   <button class="cart__counter-btn">-</button>
-                  <input class="cart__counter-input" type="text" name="" id="" value="1">
+                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">
                   <button class="cart__counter-btn">+</button>
                 </div>
 
@@ -240,7 +240,7 @@
 
                 <div class="cart__counter">
                   <button class="cart__counter-btn">-</button>
-                  <input class="cart__counter-input" type="text" name="" id="" value="1">
+                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">
                   <button class="cart__counter-btn">+</button>
                 </div>
 
@@ -253,7 +253,7 @@
 
                 <div class="cart__counter">
                   <button class="cart__counter-btn">-</button>
-                  <input class="cart__counter-input" type="text" name="" id="" value="1">
+                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">
                   <button class="cart__counter-btn">+</button>
                 </div>
 

@@ -1,9 +1,10 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .subscribe {
   padding: 140px 0;
-  @include adaptiveValue("padding-top", 140, 100, 1024, 768);
-  @include adaptiveValue("padding-bottom", 140, 100, 1024, 768);
+  @include adaptiveValue("padding-top", 140, 100, $laptop, $tablet);
+  @include adaptiveValue("padding-bottom", 140, 100, $laptop, $tablet);
 
   // .subscribe__container
   &__container {
@@ -11,7 +12,7 @@
 
   // .subscribe__title
   &__title {
-    @include adaptiveValue("margin-bottom", 40, 24, 1024, 768);
+    @include adaptiveValue("margin-bottom", 40, 24, $laptop, $tablet);
   }
 
   // .subscribe__form

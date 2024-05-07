@@ -2,18 +2,21 @@
 @use '../media' as *;
 
 .goods {
-  @include adaptiveValue("padding-top", 60, 40, 1024, 768);
+  @include adaptiveValue("padding-top", 60, 40, $laptop, $tablet);
 
   // .goods__container
   &__container {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
     gap: 20px;
   }
+  // .goods__box
+  &__box {
+    flex-basis: 970px;
+  }
   // .goods__title
   &__title {
-    @include adaptiveValue("margin-bottom", 40, 24, 1024, 768);
+    @include adaptiveValue("margin-bottom", 40, 24, $laptop, $tablet);
   }
   // .goods__list
   &__list {
@@ -23,7 +26,6 @@
     grid-template-columns: repeat(auto-fit, var(--width));
     justify-content: center;
     gap: 24px var(--col-gap);
-    max-width: 970px;
     margin: 0 auto;
 
     @include mobile {

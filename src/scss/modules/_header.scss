@@ -8,8 +8,8 @@
 }
 
 .header {
-  @include adaptiveValue("padding-top", 32, 24, 768, 320);
-  @include adaptiveValue("padding-bottom", 32, 24, 768, 320);
+  @include adaptiveValue("padding-top", 32, 24, $tablet, $mobile);
+  @include adaptiveValue("padding-bottom", 32, 24, $tablet, $mobile);
 
   //.header_fixed
   &_fixed {

@@ -8,8 +8,8 @@
   background-position: bottom;
   // background-size: contain;
   @include adaptiveValue("background-size", 1900, 710, 1900, $mobile);
-  @include adaptiveValue("padding-top", 80, 60, 1024, 768);
-  @include adaptiveValue("padding-bottom", 80, 60, 1024, 768);
+  @include adaptiveValue("padding-top", 80, 60, $laptop, $tablet);
+  @include adaptiveValue("padding-bottom", 80, 60, $laptop, $tablet);
 
   @media (min-width: 1900px) {
     background-size: cover;
@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    @include adaptiveValue("gap", 60, 40, 1024, 768);
+    @include adaptiveValue("gap", 60, 40, $laptop, $tablet);
   }
 
   // .footer__logo

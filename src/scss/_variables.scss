@@ -1,6 +1,6 @@
 :root {
   --container-width: 1300px;
-  --offset-container: 27px;
+  --container-offset: 27px;
 }
 
 $container-width: 1300;
@@ -19,15 +19,15 @@ $second-family: "Playfair Display", sans-serif;
 
 @mixin adaptiveValue($value, $maxSize, $minSize, $startWidth, $endWidth) {
   #{$value}: clamp(
-    #{$minSize}px,
-    calc(#{$minSize}px + (($maxSize - $minSize) * ((100vw - (#{$endWidth}px)) / ($startWidth - $endWidth)))),
-    #{$maxSize}px
+          #{$minSize}px,
+          calc(#{$minSize}px + (($maxSize - $minSize) * ((100vw - (#{$endWidth}px)) / ($startWidth - $endWidth)))),
+          #{$maxSize}px
   );
 }
 
 // Grids
 @mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
-	display: grid;
-	gap: $gap;
-	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }

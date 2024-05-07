@@ -2,8 +2,8 @@
 @use "../media" as *;
 
 .hero {
-  @include adaptiveValue("padding-top", 60, 40, 1024, 768);
-  @include adaptiveValue("padding-bottom", 60, 40, 1024, 768);
+  @include adaptiveValue("padding-top", 60, 40, $laptop, $tablet);
+  @include adaptiveValue("padding-bottom", 60, 40, $laptop, $tablet);
 
   // .hero__container
   &__container {
@@ -27,7 +27,7 @@
     color: $green;
 
     @include laptop {
-      @include adaptiveValue("font-size", 80, 58, 1023.98, 768);
+      @include adaptiveValue("font-size", 80, 58, $laptop, $tablet);
     }
 
     @include tablet {
@@ -46,11 +46,11 @@
     text-align: right;
 
     @include laptop {
-      @include adaptiveValue("font-size", 32, 24, 1023.98, 768);
+      @include adaptiveValue("font-size", 32, 24, $laptop, $tablet);
     }
 
     @include tablet {
-      @include adaptiveValue("font-size", 24, 18, 1023.98, 768);
+      @include adaptiveValue("font-size", 24, 18, $laptop, $tablet);
     }
   }
 

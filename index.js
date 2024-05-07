@@ -82,4 +82,14 @@ choices.forEach((choice) => {
   });
 });
 
+const headerCartBtn = document.querySelector('.header__cart-btn');
+const cart = document.querySelector('.cart');
+const cartClose = document.querySelector('.cart__close');
 
+headerCartBtn.addEventListener('click', (e) => {
+  cart.classList.toggle('cart_open');
+});
+
+cartClose.addEventListener('click', (e) => {
+  cart.classList.remove('cart_open');
+});
