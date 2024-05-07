@@ -54,3 +54,7 @@
 - [base css](https://codepen.io/Quper/pen/GRRZzWy)
 - [Валидатор](https://validator.w3.org/#validate_by_input)
 - [Проверка дерева заголовков и БЭМ](https://yoksel.github.io/html-tree/)
+- [Vite plugin image optimizer](https://www.npmjs.com/package/vite-plugin-image-optimizer)
+- API
+  - [Скачать](https://github.com/Quper24/mirano-api/archive/refs/heads/main.zip)
+  - [Репозиторий](https://github.com/Quper24/mirano-api)

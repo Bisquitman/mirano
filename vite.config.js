@@ -4,6 +4,15 @@ import autoprefixer from "autoprefixer";
 import {ViteImageOptimizer} from "vite-plugin-image-optimizer";
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  esbuild: {
+    jsxFactory: 'jsx',
+    jsxInject: 'import jsx from "@/jsx.js"',
+  },
   plugins: [
     ViteImageOptimizer({
       jpg: {
@@ -32,11 +41,6 @@ export default defineConfig({
     },
     postcss: {
       plugins: [autoprefixer()],
-    },
-  },
-  resolve: {
-    alias: {
-      "@": "/src",
     },
   },
 });
