@@ -15,7 +15,7 @@ export const initChoicesType = () => {
     //   -----------------------------------
       choicesList.innerHTML = '';
       categories.forEach((category) => {
-        console.log(category);
+        // console.log(category);
         const categoryItem = CategoryItem(category);
         choicesList.append(categoryItem);
       });

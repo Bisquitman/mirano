@@ -1,4 +1,4 @@
-import {fetchProducts} from "@/scripts/API.js";
+import {fetchProducts} from "@/scripts/API";
 
 const filterType = (type) => {
   fetchProducts({type: type.value});
@@ -6,6 +6,7 @@ const filterType = (type) => {
 
 export const filterProducts = () => {
   const filterForm = document.querySelector('.filter__form');
+  const goodsTitle = document.querySelector('.goods__title');
 
   filterType(filterForm.type);
 
@@ -13,6 +14,7 @@ export const filterProducts = () => {
     const target = e.target;
 
     if (target.name === 'type') {
+      goodsTitle.textContent = filterForm.querySelector(`#${filterForm.type.value}`).nextElementSibling.innerHTML;
       filterType(filterForm.type);
     }
   });
