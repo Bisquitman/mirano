@@ -1,4 +1,4 @@
-import {debounce} from "@/js/debounce";
+import {debounce} from "@/scripts/debounce";
 
 const adjustElementPosition = (element, count = 0) => {
   const rect = element.getBoundingClientRect();
@@ -29,6 +29,23 @@ const adjustElementPosition = (element, count = 0) => {
 export const initChoices = () => {
   const choices = document.querySelectorAll('.choices');
 
+  const closeChoice = (wrapper) => {
+    wrapper.querySelector('.choices__box').classList.remove('choices__box_open');
+    wrapper.querySelector('.choices__btn').classList.remove('choices__btn_open');
+  };
+
+  const closeAllChoices = ({target}) => {
+    let clickInside = target.closest('.choices');
+
+    if (!clickInside) {
+      choices.forEach((choice) => {
+        closeChoice(choice);
+      });
+
+      document.removeEventListener('click', closeAllChoices);
+    }
+  };
+
   choices.forEach((choice) => {
     const btn = choice.querySelector('.choices__btn');
     const box = choice.querySelector('.choices__box');
@@ -41,10 +58,15 @@ export const initChoices = () => {
 
       choices.forEach((otherChoice) => {
         if (otherChoice !== choice) {
-          otherChoice.querySelector('.choices__box').classList.remove('choices__box_open');
-          otherChoice.querySelector('.choices__btn').classList.remove('choices__btn_open');
+          closeChoice(otherChoice);
         }
       });
+
+      if (box.classList.contains('choices__box_open')) {
+        document.addEventListener('click', closeAllChoices);
+      } else {
+        document.removeEventListener('click', closeAllChoices);
+      }
 
       adjustElementPosition(box);
     });

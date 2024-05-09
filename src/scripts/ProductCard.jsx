@@ -1,4 +1,4 @@
-import {API_URL} from "@/js/API.js";
+import {API_URL} from "@/scripts/API";
 
 export const ProductCard = (product) => (
   <li class="goods__item">

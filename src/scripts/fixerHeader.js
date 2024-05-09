@@ -1,4 +1,4 @@
-import {debounce} from "@/js/debounce";
+import {debounce} from "@/scripts/debounce";
 
 export const initFixerHeader = () => {
   const header = document.querySelector('.header');
