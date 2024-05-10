@@ -1,8 +1,6 @@
 class Store {
   constructor() {
     this.observers = []; // Массив для хранения функций-наблюдателей
-    this.products = [];
-    this.categories = new Set();
   }
 
   // Метод для добавления новых наблюдателей
@@ -14,6 +12,16 @@ class Store {
   // Метод для уведомления всех наблюдателей об изменениях в хранилище
   notifyObservers() {
     this.observers.forEach((observer) => observer()); // observer() (вызывается) - это каждая из функций-наблюдателей, находящихся в массиве observers
+  }
+}
+
+// ProductStore наследуется от Store и добавляет свои методы и свойства
+// для продуктов
+class ProductStore extends Store {
+  constructor() {
+    super();
+    this.products = [];
+    this.categories = new Set();
   }
 
   getProducts() {
@@ -45,4 +53,4 @@ class Store {
   }
 }
 
-export const store = new Store();
+export const store = new ProductStore();

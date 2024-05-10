@@ -9,11 +9,11 @@ export const renderProducts = async () => {
 
     goodsList.innerHTML = '';
 
-    products.forEach((product) => {
+    const productCards = products.map((product) => {
       // console.log(product);
-      const productCard = ProductCard(product);
-      goodsList.append(productCard);
+      return ProductCard(product);
     });
+    goodsList.append(...productCards);
   };
 
   store.subscribe(updateList);

@@ -1,6 +1,6 @@
 import {store} from "@/scripts/Store";
 
-export const API_URL = 'https://resilient-florentine-cicada.glitch.me';
+export const API_URL = 'https://root-elated-splash.glitch.me';
 
 const formatQueryString = (params) => {
 //   params - ОБЪЕКТ с параметрами

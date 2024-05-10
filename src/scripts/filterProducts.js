@@ -14,7 +14,7 @@ export const filterProducts = () => {
     const target = e.target;
 
     if (target.name === 'type') {
-      goodsTitle.textContent = filterForm.querySelector(`#${filterForm.type.value}`).nextElementSibling.innerHTML;
+      goodsTitle.textContent = filterForm.querySelector(`[for="${filterForm.type.value}"]`).textContent.toLocaleUpperCase();
       filterType(filterForm.type);
     }
   });
