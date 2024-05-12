@@ -10,14 +10,17 @@
     justify-content: center;
     gap: 20px;
   }
+
   // .goods__box
   &__box {
     flex-basis: 970px;
   }
+
   // .goods__title
   &__title {
     @include adaptiveValue("margin-bottom", 40, 24, $laptop, $tablet);
   }
+
   // .goods__list
   &__list {
     --width: 310px;
@@ -33,9 +36,20 @@
       --col-gap: 12px;
     }
   }
+
+  // .goods__no-product
+  &__no-product {
+    text-align: center;
+    font-weight: 700;
+    font-size: 133.333333%;
+    color: $orange;
+    grid-column: 1 / -1;
+  }
+
   // .goods__item
   &__item {
   }
+
   // .goods__card
   &__card {
   }

@@ -39,6 +39,7 @@
     &:checked + .filter__label {
       background-color: $light-orange;
       color: $white;
+      pointer-events: none;
     }
   }
 

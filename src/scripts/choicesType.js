@@ -1,9 +1,9 @@
 import {store} from "@/scripts/Store";
-import {CategoryItem} from "@/scripts/CategoryItem";
+import {ListType} from "@/scripts/ListType";
 
 export const initChoicesType = () => {
   const typeChoices = document.querySelector('.filter__choices_type');
-  const choicesList = document.querySelector('.filter__type-list');
+  const choicesBox = document.querySelector('.filter__choices-box_type');
 
   const updateTypeChoicesVisibility = () => {
     const categories = store.getCategories();
@@ -11,15 +11,9 @@ export const initChoicesType = () => {
 
     if (categories.size) {
       typeChoices.style.display = '';
-    //   !todo обновить категории
-    //   -----------------------------------
-      choicesList.innerHTML = '';
-      categories.forEach((category) => {
-        // console.log(category);
-        const categoryItem = CategoryItem(category);
-        choicesList.append(categoryItem);
-      });
-    //   ------------------------------------
+      choicesBox.textContent = '';
+      const listType = ListType([...categories]);
+      choicesBox.append(listType);
     } else {
       typeChoices.style.display = 'none';
     }

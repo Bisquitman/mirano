@@ -1,21 +1,26 @@
 import {API_URL} from "@/scripts/API";
 
 export const ProductCard = (product) => (
-  <li class="goods__item">
-    <article class="goods__card card">
-      <img class="card__img" src={`${API_URL}${product.photoUrl}`} alt={product.name}/>
+    <li class="goods__item">
+      <article class="goods__card card">
+        <img class="card__img" src={`${API_URL}${product.photoUrl}`} alt={product.name}/>
 
-      <div class="card__content">
-        <h3 class="card__title">{product.name}</h3>
+        <div class="card__content">
+          <h3 class="card__title">{product.name}</h3>
 
-        <div class="card__footer">
-          <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>
-          <button class="card__btn">
-            <span class="card__btn-price">{product.price.toLocaleString()}&nbsp;₽</span>
-            <span class="card__btn-text">в&nbsp;корзину</span>
-          </button>
+          <div class="card__footer">
+            <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>
+            <button class="card__btn"
+                    onMouseEnter={(e) => {
+                      e.target.innerHTML = 'в корзину';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.innerHTML = `${product.price.toLocaleString()}&nbsp;₽`;
+                    }}
+            >{product.price.toLocaleString()}&nbsp;₽
+            </button>
+          </div>
         </div>
-      </div>
-    </article>
-  </li>
-)
+      </article>
+    </li>
+  );
