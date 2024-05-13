@@ -1,6 +1,7 @@
-import {store} from "@/scripts/Store";
+import {productStore} from "@/scripts/Store";
 
-export const API_URL = 'https://root-elated-splash.glitch.me';
+// export const API_URL = "https://maize-marmalade-responsibility.glitch.me";
+export const API_URL = "http://localhost:3000";
 
 const formatQueryString = (params) => {
 //   params - ОБЪЕКТ с параметрами
@@ -27,7 +28,7 @@ export const fetchProducts = async (params = {}) => {
 
     const products = await response.json();
 
-    store.setProducts(products);
+    productStore.setProducts(products);
   } catch (err) {
     console.error(`Ошибка при получении данных: ${err}`);
     return [];

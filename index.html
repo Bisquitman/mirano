@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
 
   <!--  Favicons  -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -16,331 +16,403 @@
   <meta name="theme-color" content="#ffffff">
   <!--  Favicons  -->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mirano</title>
   <script src="/src/index.js" type="module"></script>
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__container">
-      <form action="" class="header__form">
-        <input class="header__input" type="search" name="search" placeholder="Букет из роз" id="">
+<header class="header">
+  <div class="header__container">
+    <form action="" class="header__form">
+      <input class="header__input" type="search" name="search" placeholder="Букет из роз" id="">
 
-        <button class="header__search-btn" type="submit">
+      <button class="header__search-btn" type="submit">
+        <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+              d="M13.333 4.167c0 .618.611 1.541 1.23 2.316.794 1 1.745 1.873 2.834 2.539.816.499 1.806.978 2.603.978m0 0c-.797 0-1.788.48-2.603.978-1.09.667-2.04 1.54-2.834 2.538-.619.776-1.23 1.7-1.23 2.317M20 10H0"
+              stroke="currentColor"/>
+        </svg>
+      </button>
+    </form>
+
+    <img class="header__logo" src="img/logo.svg" alt="Логотип сайта Mirano Flower Boutique" width="200" height="65">
+
+    <button class="header__cart-btn" type="button">0</button>
+  </div>
+</header>
+
+<main class="main">
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero__hgroup">
+        <h1 class="hero__title">Авторские букеты</h1>
+        <p class="hero__subtitle">и подарки</p>
+      </div>
+
+      <figure class="hero__group-images">
+        <img class="hero__image hero__image_left" src="/img/hero-1.jpg" alt="Пример букета">
+
+        <svg class="hero__image hero__image_center" role="img" aria-label="Пример букета" width="680" height="588"
+             viewBox="0 0 680 588" fill="none" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice">
+          <clippath id="hero">
+            <path
+                d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z"/>
+          </clippath>
+          <image xlink:href="/img/hero-2.jpg" width="100%" height="100%" clip-path="url(#hero)"
+                 preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+
+        <img class="hero__image hero__image_right" src="/img/hero-3.jpg" alt="Пример букета">
+      </figure>
+    </div>
+  </section>
+
+  <section class="filter">
+    <h2 class="visually-hidden"></h2>
+    <div class="filter__container">
+      <form class="filter__form">
+        <fieldset class="filter__group">
+          <input class="filter__radio" type="radio" name="type" value="bouquets" id="bouquets" checked>
+          <label class="filter__label filter__label_flower" for="bouquets">Цветы</label>
+
+          <input class="filter__radio" type="radio" name="type" value="toys" id="toys">
+          <label class="filter__label filter__label_toys" for="toys">Игрушки</label>
+
+          <input class="filter__radio" type="radio" name="type" value="postcards" id="postcards">
+          <label class="filter__label filter__label_postcard" for="postcards">Открытки</label>
+        </fieldset>
+
+        <fieldset class="filter__group filter__group_choices">
+          <div class="filter__choices choices">
+            <button class="filter__select choices__btn" type="button">Цена</button>
+            <div class="choices__box filter__choices-box">
+              <fieldset class="filter__price">
+                <input class="filter__input-price" type="text" name="minPrice" placeholder="от">
+                <input class="filter__input-price" type="text" name="maxPrice" placeholder="до">
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="filter__choices filter__choices_type choices">
+            <button class="filter__select choices__btn" type="button">Тип товара</button>
+            <div class="choices__box filter__choices-box filter__choices-box_type">
+              <ul class="filter__type-list">
+                <li class="filter__type-item">
+                  <button class="filter__type-btn" type="button">Монобукеты</button>
+                </li>
+                <li class="filter__type-item">
+                  <button class="filter__type-btn" type="button">Авторские букеты</button>
+                </li>
+                <li class="filter__type-item">
+                  <button class="filter__type-btn" type="button">Цветы в коробке</button>
+                </li>
+                <li class="filter__type-item">
+                  <button class="filter__type-btn" type="button">Цветы в корзине</button>
+                </li>
+                <li class="filter__type-item">
+                  <button class="filter__type-btn" type="button">Букеты из сухоцветов</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
+  <section class="goods">
+    <div class="goods__container">
+      <div class="goods__box">
+        <h2 class="goods__title section-title">Цветы</h2>
+
+        <ul class="goods__list">
+          <!--            <li class="goods__item">-->
+          <!--              <article class="goods__card card">-->
+          <!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+          <!--                <div class="card__content">-->
+          <!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
+
+          <!--                  <div class="card__footer">-->
+          <!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
+          <!--                    <button class="card__btn">-->
+          <!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
+          <!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
+          <!--                    </button>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </article>-->
+          <!--            </li>-->
+          <!--            <li class="goods__item">-->
+          <!--              <article class="goods__card card">-->
+          <!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+          <!--                <div class="card__content">-->
+          <!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
+
+          <!--                  <div class="card__footer">-->
+          <!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
+          <!--                    <button class="card__btn">-->
+          <!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
+          <!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
+          <!--                    </button>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </article>-->
+          <!--            </li>-->
+          <!--            <li class="goods__item">-->
+          <!--              <article class="goods__card card">-->
+          <!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+          <!--                <div class="card__content">-->
+          <!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
+
+          <!--                  <div class="card__footer">-->
+          <!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
+          <!--                    <button class="card__btn">-->
+          <!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
+          <!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
+          <!--                    </button>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </article>-->
+          <!--            </li>-->
+          <!--            <li class="goods__item">-->
+          <!--              <article class="goods__card card">-->
+          <!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+          <!--                <div class="card__content">-->
+          <!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
+
+          <!--                  <div class="card__footer">-->
+          <!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
+          <!--                    <button class="card__btn">-->
+          <!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
+          <!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
+          <!--                    </button>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </article>-->
+          <!--            </li>-->
+          <!--            <li class="goods__item">-->
+          <!--              <article class="goods__card card">-->
+          <!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+          <!--                <div class="card__content">-->
+          <!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
+
+          <!--                  <div class="card__footer">-->
+          <!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
+          <!--                    <button class="card__btn">-->
+          <!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
+          <!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
+          <!--                    </button>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </article>-->
+          <!--            </li>-->
+        </ul>
+      </div>
+
+      <section class="cart">
+        <div class="cart__container">
+          <div class="cart__header">
+            <h3 class="cart__title">Ваш заказ</h3>
+
+            <button class="cart__close" type="button" aria-label="Кнопка закрытия корзины">
+              <!-- color: $orange; -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 28 28">
+                <path fill="currentColor" d="M5 5.707 5.707 5l17.678 17.678-.707.707z"/>
+                <path fill="currentColor" d="m22.678 5 .707.707L5.707 23.385 5 22.678z"/>
+              </svg>
+            </button>
+          </div>
+
+          <p class="cart__delivery delivery">сегодня в&nbsp;14:00</p>
+
+          <ul class="cart__list">
+            <!--              <li class="cart__item">-->
+            <!--                <img class="cart__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+            <!--                <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>-->
+
+            <!--                <div class="cart__counter">-->
+            <!--                  <button class="cart__counter-btn">-</button>-->
+            <!--                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">-->
+            <!--                  <button class="cart__counter-btn">+</button>-->
+            <!--                </div>-->
+
+            <!--                <p class="cart__price">3000&nbsp;₽</p>-->
+            <!--              </li>-->
+            <!--              <li class="cart__item">-->
+            <!--                <img class="cart__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+            <!--                <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>-->
+
+            <!--                <div class="cart__counter">-->
+            <!--                  <button class="cart__counter-btn">-</button>-->
+            <!--                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">-->
+            <!--                  <button class="cart__counter-btn">+</button>-->
+            <!--                </div>-->
+
+            <!--                <p class="cart__price">3000&nbsp;₽</p>-->
+            <!--              </li>-->
+            <!--              <li class="cart__item">-->
+            <!--                <img class="cart__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
+
+            <!--                <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>-->
+
+            <!--                <div class="cart__counter">-->
+            <!--                  <button class="cart__counter-btn">-</button>-->
+            <!--                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">-->
+            <!--                  <button class="cart__counter-btn">+</button>-->
+            <!--                </div>-->
+
+            <!--                <p class="cart__price">3000&nbsp;₽</p>-->
+            <!--              </li>-->
+          </ul>
+
+          <div class="cart__footer">
+            <button class="cart__order-btn">Оформить</button>
+            <p class="cart__price cart__price_total">0&nbsp;₽</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="subscribe">
+    <div class="subscribe__container">
+      <h2 class="subscribe__title section-title">Подпишись на&nbsp;рассылку</h2>
+
+      <form action="" class="subscribe__form">
+        <input class="subscribe__input" type="email" name="email" placeholder="E-mail" id="email">
+
+        <button class="subscribe__btn" type="submit">
           <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M13.333 4.167c0 .618.611 1.541 1.23 2.316.794 1 1.745 1.873 2.834 2.539.816.499 1.806.978 2.603.978m0 0c-.797 0-1.788.48-2.603.978-1.09.667-2.04 1.54-2.834 2.538-.619.776-1.23 1.7-1.23 2.317M20 10H0"
-              stroke="currentColor" />
+                d="M4.167 6.667c.618 0 1.541-.611 2.316-1.23 1-.795 1.873-1.745 2.539-2.834C9.52 1.787 10 .797 10 0m0 0c0 .797.48 1.788.978 2.603.667 1.09 1.54 2.04 2.538 2.834.776.619 1.7 1.23 2.317 1.23M10 0v20"
+                stroke="currentColor"/>
           </svg>
         </button>
       </form>
-
-      <img class="header__logo" src="img/logo.svg" alt="Логотип сайта Mirano Flower Boutique" width="200" height="65">
-
-      <button class="header__cart-btn" type="button">0</button>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main class="main">
-    <section class="hero">
-      <div class="hero__container">
-        <div class="hero__hgroup">
-          <h1 class="hero__title">Авторские букеты</h1>
-          <p class="hero__subtitle">и подарки</p>
-        </div>
+<footer class="footer">
+  <div class="footer__container">
+    <img class="footer__logo" src="./img/logo.svg" alt="Логотип компании PetPlanet">
 
-        <figure class="hero__group-images">
-          <img class="hero__image hero__image_left" src="/img/hero-1.jpg" alt="Пример букета">
+    <address class="footer__contacts">
+      <a class="footer__email footer__link" href="mailto:mirano@gmail.com">mirano@gmail.com</a>
 
-          <svg class="hero__image hero__image_center" role="img" aria-label="Пример букета" width="680" height="588"
-            viewBox="0 0 680 588" fill="none" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice">
-            <clippath id="hero">
-              <path
-                d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z" />
-            </clippath>
-            <image xlink:href="/img/hero-2.jpg" width="100%" height="100%" clip-path="url(#hero)"
-              preserveAspectRatio="xMidYMid slice" />
-          </svg>
-
-          <img class="hero__image hero__image_right" src="/img/hero-3.jpg" alt="Пример букета">
-        </figure>
-      </div>
-    </section>
-
-    <section class="filter">
-      <h2 class="visually-hidden"></h2>
-      <div class="filter__container">
-        <form class="filter__form">
-          <fieldset class="filter__group">
-            <input class="filter__radio" type="radio" name="type" value="bouquets" id="bouquets" checked>
-            <label class="filter__label filter__label_flower" for="bouquets">Цветы</label>
-
-            <input class="filter__radio" type="radio" name="type" value="toys" id="toys">
-            <label class="filter__label filter__label_toys" for="toys">Игрушки</label>
-
-            <input class="filter__radio" type="radio" name="type" value="postcards" id="postcards">
-            <label class="filter__label filter__label_postcard" for="postcards">Открытки</label>
-          </fieldset>
-
-          <fieldset class="filter__group filter__group_choices">
-            <div class="filter__choices choices">
-              <button class="filter__select choices__btn" type="button">Цена</button>
-              <div class="choices__box filter__choices-box">
-                <fieldset class="filter__price">
-                  <input class="filter__input-price" type="text" name="minPrice" placeholder="от">
-                  <input class="filter__input-price" type="text" name="maxPrice" placeholder="до">
-                </fieldset>
-              </div>
-            </div>
-
-            <div class="filter__choices filter__choices_type choices">
-              <button class="filter__select choices__btn" type="button">Тип товара</button>
-              <div class="choices__box filter__choices-box filter__choices-box_type">
-                <ul class="filter__type-list">
-                  <li class="filter__type-item"><button class="filter__type-btn" type="button">Монобукеты</button></li>
-                  <li class="filter__type-item"><button class="filter__type-btn" type="button">Авторские букеты</button></li>
-                  <li class="filter__type-item"><button class="filter__type-btn" type="button">Цветы в коробке</button></li>
-                  <li class="filter__type-item"><button class="filter__type-btn" type="button">Цветы в корзине</button></li>
-                  <li class="filter__type-item"><button class="filter__type-btn" type="button">Букеты из сухоцветов</button></li>
-                </ul>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </section>
-
-    <section class="goods">
-      <div class="goods__container">
-        <div class="goods__box">
-          <h2 class="goods__title section-title">Цветы</h2>
-
-          <ul class="goods__list">
-<!--            <li class="goods__item">-->
-<!--              <article class="goods__card card">-->
-<!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
-
-<!--                <div class="card__content">-->
-<!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
-
-<!--                  <div class="card__footer">-->
-<!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
-<!--                    <button class="card__btn">-->
-<!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
-<!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
-<!--                    </button>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </li>-->
-<!--            <li class="goods__item">-->
-<!--              <article class="goods__card card">-->
-<!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
-
-<!--                <div class="card__content">-->
-<!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
-
-<!--                  <div class="card__footer">-->
-<!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
-<!--                    <button class="card__btn">-->
-<!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
-<!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
-<!--                    </button>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </li>-->
-<!--            <li class="goods__item">-->
-<!--              <article class="goods__card card">-->
-<!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
-
-<!--                <div class="card__content">-->
-<!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
-
-<!--                  <div class="card__footer">-->
-<!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
-<!--                    <button class="card__btn">-->
-<!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
-<!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
-<!--                    </button>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </li>-->
-<!--            <li class="goods__item">-->
-<!--              <article class="goods__card card">-->
-<!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
-
-<!--                <div class="card__content">-->
-<!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
-
-<!--                  <div class="card__footer">-->
-<!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
-<!--                    <button class="card__btn">-->
-<!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
-<!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
-<!--                    </button>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </li>-->
-<!--            <li class="goods__item">-->
-<!--              <article class="goods__card card">-->
-<!--                <img class="card__img" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">-->
-
-<!--                <div class="card__content">-->
-<!--                  <h3 class="card__title">Авторский букет из&nbsp;роз, диантусов и&nbsp;сухоцветов</h3>-->
-
-<!--                  <div class="card__footer">-->
-<!--                    <p class="card__delivery delivery">сегодня в&nbsp;14:00</p>-->
-<!--                    <button class="card__btn">-->
-<!--                      <span class="card__btn-price">3000&nbsp;₽</span>-->
-<!--                      <span class="card__btn-text">в&nbsp;корзину</span>-->
-<!--                    </button>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </li>-->
-          </ul>
-        </div>
-
-        <section class="cart">
-          <div class="cart__container">
-            <div class="cart__header">
-              <h3 class="cart__title">Ваш заказ</h3>
-
-              <button class="cart__close" type="button" aria-label="Кнопка закрытия корзины">
-                <!-- color: $orange; -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 28 28"><path fill="currentColor" d="M5 5.707 5.707 5l17.678 17.678-.707.707z"/><path fill="currentColor" d="m22.678 5 .707.707L5.707 23.385 5 22.678z"/></svg>
-              </button>
-            </div>
-
-            <p class="cart__delivery delivery">сегодня в&nbsp;14:00</p>
-
-            <ul class="cart__list">
-              <li class="cart__item">
-                <img class="cart__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">
-
-                <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>
-
-                <div class="cart__counter">
-                  <button class="cart__counter-btn">-</button>
-                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">
-                  <button class="cart__counter-btn">+</button>
-                </div>
-
-                <p class="cart__price">3000&nbsp;₽</p>
-              </li>
-              <li class="cart__item">
-                <img class="cart__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">
-
-                <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>
-
-                <div class="cart__counter">
-                  <button class="cart__counter-btn">-</button>
-                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">
-                  <button class="cart__counter-btn">+</button>
-                </div>
-
-                <p class="cart__price">3000&nbsp;₽</p>
-              </li>
-              <li class="cart__item">
-                <img class="cart__image" src="/img/goods/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов">
-
-                <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>
-
-                <div class="cart__counter">
-                  <button class="cart__counter-btn">-</button>
-                  <input class="cart__counter-input" type="number" name="" value="1" min="0" max="99">
-                  <button class="cart__counter-btn">+</button>
-                </div>
-
-                <p class="cart__price">3000&nbsp;₽</p>
-              </li>
-            </ul>
-
-            <div class="cart__footer">
-              <button class="cart__order-btn">Оформить</button>
-              <p class="cart__price">3000&nbsp;₽</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <section class="subscribe">
-      <div class="subscribe__container">
-        <h2 class="subscribe__title section-title">Подпишись на&nbsp;рассылку</h2>
-
-        <form action="" class="subscribe__form">
-          <input class="subscribe__input" type="email" name="email" placeholder="E-mail" id="email">
-
-          <button class="subscribe__btn" type="submit">
-            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M4.167 6.667c.618 0 1.541-.611 2.316-1.23 1-.795 1.873-1.745 2.539-2.834C9.52 1.787 10 .797 10 0m0 0c0 .797.48 1.788.978 2.603.667 1.09 1.54 2.04 2.538 2.834.776.619 1.7 1.23 2.317 1.23M10 0v20"
-                stroke="currentColor" />
+      <ul class="footer__list footer__list_social">
+        <li class="footer__item">
+          <a class="footer__link" href="https://t.me" target="_blank" rel="noopener noreferrer"
+             aria-label="Мы в Telegram" title="Мы в Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
+              <path fill="currentColor"
+                    d="M16 3C8.824 3 3 8.824 3 16s5.824 13 13 13 13-5.824 13-13S23.176 3 16 3Zm6.032 8.84c-.195 2.054-1.04 7.046-1.469 9.347-.182.975-.546 1.3-.884 1.339-.754.065-1.326-.494-2.054-.975-1.144-.754-1.794-1.222-2.899-1.95-1.287-.845-.455-1.313.286-2.067.195-.195 3.523-3.224 3.588-3.497a.26.26 0 0 0-.065-.234c-.078-.065-.182-.039-.273-.026-.117.026-1.937 1.235-5.486 3.627-.52.351-.988.533-1.404.52-.468-.013-1.352-.26-2.015-.481-.819-.26-1.456-.403-1.404-.858.026-.234.351-.468.962-.715 3.796-1.651 6.318-2.743 7.579-3.263 3.614-1.508 4.355-1.768 4.849-1.768.104 0 .351.026.507.156.13.104.169.247.182.351-.013.078.013.312 0 .494Z"/>
             </svg>
-          </button>
-        </form>
-      </div>
-    </section>
-  </main>
+          </a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="https://youtu.be" target="_blank" rel="noopener noreferrer"
+             aria-label="Мы на YouTube" title="Мы на YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
+              <path fill="currentColor"
+                    d="m13.333 20 6.92-4-6.92-4v8ZM28.747 9.56c.173.627.293 1.467.373 2.533.093 1.067.133 1.987.133 2.787l.08 1.12c0 2.92-.213 5.067-.586 6.44-.334 1.2-1.107 1.973-2.307 2.307-.627.173-1.774.293-3.534.373-1.733.093-3.32.133-4.786.133l-2.12.08c-5.587 0-9.067-.213-10.44-.586-1.2-.334-1.973-1.107-2.307-2.307-.173-.627-.293-1.467-.373-2.533a32.076 32.076 0 0 1-.133-2.787L2.667 16c0-2.92.213-5.067.586-6.44.333-1.2 1.107-1.973 2.307-2.307.627-.173 1.773-.293 3.533-.373a88.87 88.87 0 0 1 4.787-.133l2.12-.08c5.587 0 9.067.213 10.44.586 1.2.334 1.973 1.107 2.306 2.307Z"/>
+            </svg>
+          </a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="https://vk.com" target="_blank" rel="noopener noreferrer"
+             aria-label="Мы в VKontakte" title="Мы в VKontakte">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
+              <path fill="currentColor"
+                    d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13S23.18 3 16 3Zm5 14.667s1.15 1.135 1.432 1.661c.008.011.013.022.015.028.115.193.142.344.085.456-.094.187-.42.279-.53.287H19.97c-.14 0-.436-.037-.793-.283-.275-.192-.546-.508-.81-.815-.394-.458-.735-.853-1.08-.853a.413.413 0 0 0-.128.02c-.26.084-.593.455-.593 1.444 0 .308-.244.486-.416.486h-.93c-.317 0-1.968-.111-3.43-1.654-1.79-1.889-3.402-5.678-3.415-5.713-.102-.245.108-.376.337-.376h2.051c.274 0 .363.166.426.314.073.172.34.856.781 1.625.714 1.254 1.151 1.763 1.502 1.763.066 0 .13-.018.188-.049.458-.254.372-1.886.352-2.225 0-.063-.001-.73-.236-1.05-.168-.23-.453-.319-.627-.351a.745.745 0 0 1 .27-.23c.314-.156.88-.18 1.442-.18h.313c.61.009.766.048.987.104.447.107.456.395.417 1.382-.012.28-.024.597-.024.971 0 .081-.004.168-.004.26-.014.503-.03 1.073.325 1.307.046.029.1.044.154.045.123 0 .494 0 1.5-1.724.31-.555.578-1.132.805-1.725.02-.036.08-.144.15-.186a.36.36 0 0 1 .168-.04h2.412c.263 0 .443.04.477.142.06.16-.011.652-1.112 2.143l-.492.649c-.998 1.308-.998 1.374.063 2.367Z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </address>
 
-  <footer class="footer">
-    <div class="footer__container">
-      <img class="footer__logo" src="./img/logo.svg" alt="Логотип компании PetPlanet">
+    <div class="footer__developers">
+      <p class="footer__text" hidden>Проект сделан в&nbsp;учебных целях</p>
 
-      <address class="footer__contacts">
-        <a class="footer__email footer__link" href="mailto:mirano@gmail.com">mirano@gmail.com</a>
-
-        <ul class="footer__list footer__list_social">
-          <li class="footer__item">
-            <a class="footer__link" href="https://t.me" target="_blank" rel="noopener noreferrer"
-              aria-label="Мы в Telegram" title="Мы в Telegram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <path fill="currentColor"
-                  d="M16 3C8.824 3 3 8.824 3 16s5.824 13 13 13 13-5.824 13-13S23.176 3 16 3Zm6.032 8.84c-.195 2.054-1.04 7.046-1.469 9.347-.182.975-.546 1.3-.884 1.339-.754.065-1.326-.494-2.054-.975-1.144-.754-1.794-1.222-2.899-1.95-1.287-.845-.455-1.313.286-2.067.195-.195 3.523-3.224 3.588-3.497a.26.26 0 0 0-.065-.234c-.078-.065-.182-.039-.273-.026-.117.026-1.937 1.235-5.486 3.627-.52.351-.988.533-1.404.52-.468-.013-1.352-.26-2.015-.481-.819-.26-1.456-.403-1.404-.858.026-.234.351-.468.962-.715 3.796-1.651 6.318-2.743 7.579-3.263 3.614-1.508 4.355-1.768 4.849-1.768.104 0 .351.026.507.156.13.104.169.247.182.351-.013.078.013.312 0 .494Z" />
-              </svg>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link" href="https://youtu.be" target="_blank" rel="noopener noreferrer"
-              aria-label="Мы на YouTube" title="Мы на YouTube">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <path fill="currentColor"
-                  d="m13.333 20 6.92-4-6.92-4v8ZM28.747 9.56c.173.627.293 1.467.373 2.533.093 1.067.133 1.987.133 2.787l.08 1.12c0 2.92-.213 5.067-.586 6.44-.334 1.2-1.107 1.973-2.307 2.307-.627.173-1.774.293-3.534.373-1.733.093-3.32.133-4.786.133l-2.12.08c-5.587 0-9.067-.213-10.44-.586-1.2-.334-1.973-1.107-2.307-2.307-.173-.627-.293-1.467-.373-2.533a32.076 32.076 0 0 1-.133-2.787L2.667 16c0-2.92.213-5.067.586-6.44.333-1.2 1.107-1.973 2.307-2.307.627-.173 1.773-.293 3.533-.373a88.87 88.87 0 0 1 4.787-.133l2.12-.08c5.587 0 9.067.213 10.44.586 1.2.334 1.973 1.107 2.306 2.307Z" />
-              </svg>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link" href="https://vk.com" target="_blank" rel="noopener noreferrer"
-              aria-label="Мы в VKontakte" title="Мы в VKontakte">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
-                <path fill="currentColor"
-                  d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13S23.18 3 16 3Zm5 14.667s1.15 1.135 1.432 1.661c.008.011.013.022.015.028.115.193.142.344.085.456-.094.187-.42.279-.53.287H19.97c-.14 0-.436-.037-.793-.283-.275-.192-.546-.508-.81-.815-.394-.458-.735-.853-1.08-.853a.413.413 0 0 0-.128.02c-.26.084-.593.455-.593 1.444 0 .308-.244.486-.416.486h-.93c-.317 0-1.968-.111-3.43-1.654-1.79-1.889-3.402-5.678-3.415-5.713-.102-.245.108-.376.337-.376h2.051c.274 0 .363.166.426.314.073.172.34.856.781 1.625.714 1.254 1.151 1.763 1.502 1.763.066 0 .13-.018.188-.049.458-.254.372-1.886.352-2.225 0-.063-.001-.73-.236-1.05-.168-.23-.453-.319-.627-.351a.745.745 0 0 1 .27-.23c.314-.156.88-.18 1.442-.18h.313c.61.009.766.048.987.104.447.107.456.395.417 1.382-.012.28-.024.597-.024.971 0 .081-.004.168-.004.26-.014.503-.03 1.073.325 1.307.046.029.1.044.154.045.123 0 .494 0 1.5-1.724.31-.555.578-1.132.805-1.725.02-.036.08-.144.15-.186a.36.36 0 0 1 .168-.04h2.412c.263 0 .443.04.477.142.06.16-.011.652-1.112 2.143l-.492.649c-.998 1.308-.998 1.374.063 2.367Z" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </address>
-
-      <div class="footer__developers">
-        <p class="footer__text" hidden>Проект сделан в&nbsp;учебных целях</p>
-
-        <ul class="footer__list footer__list_info">
-          <li class="footer__item">Designer: <a class="footer__link" href="https://t.me/mrshmallowww" target="_blank"
-              rel="noopener noreferrer">Anastasia Ilina</a></li>
-          <li class="footer__item">Developer: <a class="footer__link" href="https://github.com/Bisquitman/mirano"
-              target="_blank" rel="noopener noreferrer">Bisquitman</a></li>
-        </ul>
-      </div>
-
-      <p class="footer__copyright">&copy;&nbsp;Mirano, 2024</p>
+      <ul class="footer__list footer__list_info">
+        <li class="footer__item">Designer: <a class="footer__link" href="https://t.me/mrshmallowww" target="_blank"
+                                              rel="noopener noreferrer">Anastasia Ilina</a></li>
+        <li class="footer__item">Developer: <a class="footer__link" href="https://github.com/Bisquitman/mirano"
+                                               target="_blank" rel="noopener noreferrer">Bisquitman</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <p class="footer__copyright">&copy;&nbsp;Mirano, 2024</p>
+  </div>
+</footer>
+
+<div class="modal order">
+  <div class="modal__main">
+    <h2 class="modal__title">Оформить заказ</h2>
+
+    <div class="modal__container">
+      <form class="order__form form-order">
+        <div class="form-order__body">
+          <fieldset class="form-order__fieldset">
+            <legend class="form-order__legend">Данные заказчика</legend>
+            <input type="text" class="form-order__input" placeholder="Имя">
+            <input type="tel" class="form-order__input" placeholder="Телефон">
+          </fieldset>
+
+          <fieldset class="form-order__fieldset">
+            <legend class="form-order__legend">Данные получателя</legend>
+            <input type="text" class="form-order__input" placeholder="Имя">
+            <input type="tel" class="form-order__input" placeholder="Телефон">
+          </fieldset>
+
+          <fieldset class="form-order__fieldset">
+            <legend class="form-order__legend">Адрес</legend>
+            <input type="text" class="form-order__input" placeholder="Улица">
+            <fieldset class="form-order__fieldset">
+              <input type="text" class="form-order__input" placeholder="Дом">
+              <input type="text" class="form-order__input" placeholder="Квартира">
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="form-order__fieldset">
+            <label class="form-order__label radio">
+              <input class="radio__input" type="radio" name="online" id="payment" value="Оплата онлайн" checked>
+              Оплата онлайн
+            </label>
+          </fieldset>
+
+          <fieldset class="form-order__fieldset">
+            <div class="form-order__delivery">
+              <p class="form-order__delivery-date">Доставка <span>10.05</span></p>
+
+              <select name="" class="form-order__delivery-time">
+                <option value="с 9:00 до 12:00" selected>с 9:00 до 12:00</option>
+                <option value="с 12:00 до 15:00">с 12:00 до 15:00</option>
+                <option value="с 15:00 до 18:00">с 15:00 до 18:00</option>
+                <option value="с 18:00 до 21:00">с 18:00 до 21:00</option>
+              </select>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-order__footer">
+          <p class="form-order__total-price">9000&nbsp;&#8381;</p>
+          <button class="form-order__order-btn" type="submit">Заказать</button>
+        </div>
+      </form>
+    </div>
+    <button class="modal__close">&#10006;</button>
+  </div>
+</div>
 </body>
 
 </html>

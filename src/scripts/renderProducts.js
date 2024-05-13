@@ -1,11 +1,11 @@
 import {ProductCard} from "@/scripts/ProductCard";
-import {store} from "@/scripts/Store";
+import {productStore} from "@/scripts/Store";
 
 export const renderProducts = async () => {
   const goodsList = document.querySelector('.goods__list');
 
   const updateList = () => {
-    const products = store.getProducts(); // Получаем продукты из хранилища (вместо fetchProducts())
+    const products = productStore.getProducts(); // Получаем продукты из хранилища (вместо fetchProducts())
 
     goodsList.innerHTML = '';
 
@@ -24,6 +24,6 @@ export const renderProducts = async () => {
     goodsList.append(...productCards);
   };
 
-  store.subscribe(updateList);
+  productStore.subscribe(updateList);
   updateList();
 }
