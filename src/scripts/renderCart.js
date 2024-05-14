@@ -16,6 +16,7 @@ export const renderCart = () => {
       messageItem.textContent = 'Корзина пуста...';
       messageItem.classList.add('cart__no-product');
       cartList.append(messageItem);
+      cartPriceTotal.innerHTML = `0&nbsp;₽`
       return;
     }
 

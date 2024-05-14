@@ -28,5 +28,4 @@ export const initCart = async () => {
   cartClose.addEventListener('click', (e) => {
     cart.classList.remove('cart_open');
   });
-
 }
