@@ -1,6 +1,7 @@
 import {productStore} from "@/scripts/Store";
 
-// export const API_URL = "https://maize-marmalade-responsibility.glitch.me";
+// export const API_URL = "https://mirano-api-f5s9.onrender.com";
+// export const API_URL = "https://denim-wobbly-trout.glitch.me";
 export const API_URL = "http://localhost:3000";
 
 const formatQueryString = (params) => {
@@ -32,5 +33,26 @@ export const fetchProducts = async (params = {}) => {
   } catch (err) {
     console.error(`Ошибка при получении данных: ${err}`);
     return [];
+  }
+}
+
+export const sendOrder = async (orderData) => {
+  try {
+    const response = await fetch(`${API_URL}/api/orders`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Ошибка HTTP при отправке заказа :: ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (e) {
+    console.error(e)
   }
 }

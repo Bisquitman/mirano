@@ -4,6 +4,7 @@ import {renderCart} from "@/scripts/renderCart";
 const headerCartBtn = document.querySelector('.header__cart-btn');
 const cart = document.querySelector('.cart');
 const cartClose = document.querySelector('.cart__close');
+const cartPriceTotal = document.querySelector('.cart__price_total');
 
 const toggleCart = (e) => {
   cart.classList.toggle('cart_open');
@@ -20,7 +21,11 @@ export const initCart = async () => {
   renderCart();
 
   cartStore.subscribe(() => {
-    headerCartBtn.textContent = cartStore.getCart().length;
+    const cart = cartStore.getCart();
+    headerCartBtn.textContent = cart.length;
+
+    const totalPriceValue = cart.reduce((acc, product) => (acc + product.price * product.quantity), 0);
+    cartPriceTotal.innerHTML = `${totalPriceValue.toLocaleString()}&nbsp;₽`;
   });
 
   headerCartBtn.addEventListener('click', toggleCart);
