@@ -1,5 +1,3 @@
-import {productStore} from "@/scripts/Store";
-
 // export const API_URL = "https://mirano-api-f5s9.onrender.com";
 export const API_URL = "https://denim-wobbly-trout.glitch.me";
 // export const API_URL = "http://localhost:3000";
@@ -27,9 +25,7 @@ export const fetchProducts = async (params = {}) => {
       throw new Error(`HTTP error! Status: ${response.statusText}`);
     }
 
-    const products = await response.json();
-
-    productStore.setProducts(products);
+    return await response.json();
   } catch (err) {
     console.error(`Ошибка при получении данных: ${err}`);
     return [];

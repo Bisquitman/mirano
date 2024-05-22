@@ -1,5 +1,5 @@
-import {fetchProducts} from "@/scripts/API";
 import {callbackWithPreload} from "@/scripts/preload";
+import {productStore} from "@/scripts/Store";
 
 export const initSearchProducts = () => {
   const headerForm = document.querySelector('.header__form');
@@ -14,7 +14,7 @@ export const initSearchProducts = () => {
     const searchQuery = formData.get('search').trim();
 
     if (searchQuery) {
-      callbackWithPreload(goodsSection, fetchProducts, {search: searchQuery});
+      callbackWithPreload(goodsSection, productStore.fetchProducts(), {search: searchQuery});
       goodsTitle.innerHTML = `Результаты поиска по запросу &laquo${searchQuery}&raquo;`;
     }
 
