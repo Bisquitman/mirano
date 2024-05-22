@@ -1,8 +1,8 @@
 import {productStore} from "@/scripts/Store";
 
-// export const API_URL = "https://mirano-api-f5s9.onrender.com";
+export const API_URL = "https://mirano-api-f5s9.onrender.com";
 // export const API_URL = "https://denim-wobbly-trout.glitch.me";
-export const API_URL = "http://localhost:3000";
+// export const API_URL = "http://localhost:3000";
 
 const formatQueryString = (params) => {
 //   params - ОБЪЕКТ с параметрами
